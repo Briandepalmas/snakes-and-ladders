@@ -2,7 +2,7 @@
 
 ## Wireframe
 
-![wireframe](/assets/images)
+![wireframe](https://github.com/Briandepalmas/snakes-and-ladders/blob/master/assets/images/gamewireframe.png)
 
 ## Game Instructions // Game rules:
 
