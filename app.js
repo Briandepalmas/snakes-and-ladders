@@ -108,7 +108,7 @@ function user2() {
 
 function finishLine() {
 
-    if (position1 >= 32 || position2 >= 32) {
+    if (position1 >= 36 || position2 >= 36) {
         win = true
     }
 }
