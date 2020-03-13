@@ -51,7 +51,7 @@ function firstTurn() {
 
 
 
-var win=false;
+var win = false;
 
 
 function user1() {
@@ -71,9 +71,9 @@ function user1() {
         console.log(gameStart)
         finishLine()
         ladder()
-        if(win==true){
-        console.log("USER 1 WINS!")
-        }else{
+        if (win == true) {
+            console.log("USER 1 WINS!")
+        } else {
             user2()
         }
 
@@ -98,11 +98,11 @@ function user2() {
         console.log(position2)
         ladder(position2)
         finishLine()
-        if(win==true){
+        if (win == true) {
             console.log("USER 2 WINS!")
-            }else{
-                user1()
-            }
+        } else {
+            user1()
+        }
     }
 
 }
@@ -115,21 +115,25 @@ function finishLine() {
 }
 
 function ladder() {
-//16 to 29
-if (position1==1){
-    position1=29
-console.log(position1 + "HULU")
-}else if(position1)
-
-
-if (position2==1||position2==2||position2==3||position2==4){
-    position2=29
-console.log(position2 + "HAOL")
+    //16 to 29
+    if (position1 == 16) {
+        position1 = 29
+        console.log(position1 + " User 1 went up to 29")
+    } 
+    //32 to 20
+    else if (position1 == 32) {
+        position1 = 20
+        console.log(position1 + " User 1 decreased to 20")
+    }
+    //16 to 29
+    if (position2 == 16) {
+        position2 = 29
+        console.log(position2 + " User 2 went up to 29")
+    } 
+    //32 to 20
+    else if (position1 == 32) {
+        position2 = 20
+        console.log(position2 + " User 2 decreased to 20")
+    }
 }
 
-
-}
-
-function snake() {
-//32 to 20
-}
