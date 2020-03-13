@@ -1,13 +1,17 @@
+body{
+    background-image: url(/assets/images/bodybackground.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vw;
+}
 #wrapper{
     margin-bottom: 60%;
     margin-top: 30%;
+    
     
 }
 .container{
     
     display:grid;
-    
-   
     grid-template-columns: 100% 100% 100% 100% 100% 100%;
     grid-template-rows:100% 100% 100% 100% 100% 100% ;
     margin-left: 20%; 
@@ -16,8 +20,10 @@
     width:10vw;
     
 }
- #item{
-    
-    border:solid black;
+ .item{
+     font-size: 30px;
+     color:white;
+    background-color: navy;
+    border:solid white;
 
 }
