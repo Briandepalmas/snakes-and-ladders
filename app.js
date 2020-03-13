@@ -70,6 +70,7 @@ function user1() {
         console.log(position1)
         console.log(gameStart)
         finishLine()
+        ladder()
         if(win==true){
         console.log("USER 1 WINS!")
         }else{
@@ -95,7 +96,7 @@ function user2() {
         console.log(`USER2 rolled a ${rolled}`)
         console.log(`USER2 moves to square #${position2}`)
         console.log(position2)
-        
+        ladder(position2)
         finishLine()
         if(win==true){
             console.log("USER 2 WINS!")
@@ -113,10 +114,22 @@ function finishLine() {
     }
 }
 
-function trapIncrease() {
+function ladder() {
+//16 to 29
+if (position1==1){
+    position1=29
+console.log(position1 + "HULU")
+}else if(position1)
+
+
+if (position2==1||position2==2||position2==3||position2==4){
+    position2=29
+console.log(position2 + "HAOL")
+}
+
 
 }
 
-function trapDecrease() {
-
+function snake() {
+//32 to 20
 }
