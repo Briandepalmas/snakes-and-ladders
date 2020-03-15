@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <img class="top"id="surf"src="/assets/images/surf.png" alt="surfboard">
+    <!-- <img class="top"id="surf"src="/assets/images/surf.png" alt="surfboard"> -->
 <h1 class="top"id="title">SNAKES & LADDERS
     
 </h1>
+ <button id="dice" type="button" onclick="user1()">CLICK TO ROLL DICE</button>
     <title>Snakes&Ladders</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
@@ -13,8 +14,9 @@
 </head>
 
 <body>
-    
-  
+    <button id="btn" type="button" onclick="firstTurn()">START GAME</button>
+   
+  <p id="text"> START GAME to decide who moves first.</p>
     <div id="wrapper">
   <img id="snake" src="assets/images/snake.png">
   <img id="ladder" src="assets/images/ladder.png">
