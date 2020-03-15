@@ -23,27 +23,32 @@ function dice() {
 
 function firstTurn() {
     //WHO GOES FIRST???
-    document.getElementById("text").innerHTML = "ROLL TO DICE TO DECIDE WHO MOVES FIRST"
+    // document.getElementById("text").innerHTML = "ROLL TO DICE TO DECIDE WHO MOVES FIRST"
     if (gameStart == false) {
         user1()
         user2()
         console.log(position1)
         console.log(position2)
         if (position1 > position2) {
-            document.getElementById("text").innerHTML = `PLAYER1 rolled a ${position1}.\n PLAYER2 rolled a ${position2}.\nPLAYER1 wins the first turn`
+            document.getElementById("text").innerHTML = `PLAYER1 rolled a ${position1}.\n PLAYER2 rolled a ${position2}.\nPLAYER1 GOES FIRST!\n \nCLICK DICE BUTTON TO ROLL THE DICE.`
             console.log("user1 goes first")
             gameStart = true;
             position1 = 0
-            position2 = 0
-            user1();
+            position2 = 0 
+            document.getElementById("btn").style.display = "none";
+            document.getElementById("dice").onclick = function() {user1()}
+            //user1();
         } else if (position1 < position2) {
-            document.getElementById("text").innerHTML = "PLAYER2 MOVES FIRST"
+            document.getElementById("text").innerHTML = `PLAYER1 rolled a ${position1}.\n PLAYER2 rolled a ${position2}.\nPLAYER2 GOES FIRST!\n \nCLICK DICE BUTTON TO ROLL THE DICE.`
             console.log("user2 goes first")
             gameStart = true;
             position1 = 0
             position2 = 0
-            user2()
+            document.getElementById("btn").style.display = "none";
+             document.getElementById("dice").onclick = function() {user2()}
+            //user2()
         } else if (position1 == position2) {
+            document.getElementById("text").innerHTML = `PLAYER1 rolled a ${position1}.\n PLAYER2 rolled a ${position2}.\n TIE? press Start Game to roll again`
             console.log("tie")
             firstTurn()
         }
@@ -54,8 +59,8 @@ function firstTurn() {
 
 
 
-var win = false;
-
+let win = false;
+let myturn=false;
 
 function user1() {
     dice()
@@ -68,16 +73,18 @@ function user1() {
     }
     if (gameStart == true) {
         position1 += rolled
+        document.getElementById("text").innerHTML = `PLAYER1 rolled a ${rolled}\nPLAYER1 moves to square #${position1}`
         console.log(`USER1 rolled a ${rolled}`)
         console.log(`USER1 moves to square #${position1}`)
-        console.log(position1)
-        console.log(gameStart)
+        // console.log(position1)
+        // console.log(gameStart)
         finishLine()
         ladder()
         if (win == true) {
             console.log("USER 1 WINS!")
         } else {
-         document.getElementById("btn").addEventListener("click",user2())   
+            //document.getElementById("text").innerHTML="PLAYER2's turn to roll dice."
+            document.getElementById("dice").onclick = function() {user2()}
         }
 
     }
@@ -85,7 +92,7 @@ function user1() {
 
 
 function user2() {
-    dice()
+   dice()
 
     if (gameStart == false) {
         position2 = rolled
@@ -96,15 +103,17 @@ function user2() {
 
         console.log(rolled)
         position2 += rolled
+        document.getElementById("text").innerHTML = `PLAYER2 rolled a ${rolled}\nPLAYER2 moves to square #${position2}`
         console.log(`USER2 rolled a ${rolled}`)
         console.log(`USER2 moves to square #${position2}`)
-        console.log(position2)
+        display()
         ladder()
         finishLine()
         if (win == true) {
             console.log("USER 2 WINS!")
         } else {
-            user1()
+          
+            document.getElementById("dice").onclick = function() {user1()}
         }
     }
 
@@ -112,7 +121,11 @@ function user2() {
 
 function finishLine() {
 
-    if (position1 >= 36 || position2 >= 36) {
+    if (position1 >= 36){
+        document.getElementById("dice").onclick = alert("GAME OVER PLAYER 1 WINS!")
+        win = true
+    } else if (position2 >= 36) {
+        document.getElementById("dice").onclick = alert("GAME OVER PLAYER 2 WINS!")
         win = true
     }
 }
@@ -140,8 +153,20 @@ function ladder() {
     }
 }
 
+display=()=>{
+    var x = document.createElement("IMG");
+  x.setAttribute("src", "/assets/images/orangeicon.png");
+  x.setAttribute("width", "100");
+  x.setAttribute("height", "100");
+  x.setAttribute("alt", "The Pulpit Rock");
+ //document.body.appendChild(x);
+console.log(`item${position2}`)
+let item=`item${position1}`
+document.getElementById(item).appendChild(x);
+   //document.getElementById(item).innerHTML= "REDDD";
+}
 
 
-
+//display()
 
 
