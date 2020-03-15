@@ -13,8 +13,8 @@ let position1 = user[0].position
 let position2 = user[1].position
 
 
-firstTurn()
-//console.log(position1 + "xx" + rolled)
+//document.getElementById("btn").addEventListener("click",firstTurn())
+// //console.log(position1 + "xx" + rolled)
 
 
 function dice() {
@@ -23,18 +23,21 @@ function dice() {
 
 function firstTurn() {
     //WHO GOES FIRST???
+    document.getElementById("text").innerHTML = "ROLL TO DICE TO DECIDE WHO MOVES FIRST"
     if (gameStart == false) {
         user1()
         user2()
         console.log(position1)
         console.log(position2)
         if (position1 > position2) {
+            document.getElementById("text").innerHTML = `PLAYER1 rolled a ${position1}.\n PLAYER2 rolled a ${position2}.\nPLAYER1 wins the first turn`
             console.log("user1 goes first")
             gameStart = true;
             position1 = 0
             position2 = 0
             user1();
         } else if (position1 < position2) {
+            document.getElementById("text").innerHTML = "PLAYER2 MOVES FIRST"
             console.log("user2 goes first")
             gameStart = true;
             position1 = 0
@@ -74,7 +77,7 @@ function user1() {
         if (win == true) {
             console.log("USER 1 WINS!")
         } else {
-            user2()
+         document.getElementById("btn").addEventListener("click",user2())   
         }
 
     }
@@ -96,7 +99,7 @@ function user2() {
         console.log(`USER2 rolled a ${rolled}`)
         console.log(`USER2 moves to square #${position2}`)
         console.log(position2)
-        ladder(position2)
+        ladder()
         finishLine()
         if (win == true) {
             console.log("USER 2 WINS!")
@@ -131,9 +134,14 @@ function ladder() {
         console.log(position2 + " User 2 went up to 29")
     } 
     //32 to 20
-    else if (position1 == 32) {
+    else if (position2 == 32) {
         position2 = 20
         console.log(position2 + " User 2 decreased to 20")
     }
 }
+
+
+
+
+
 
