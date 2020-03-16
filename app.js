@@ -154,11 +154,11 @@ function ladder() {
 }
 
 display=()=>{
+    //let does not work
     var x = document.createElement("IMG");
   x.setAttribute("src", "/assets/images/orangeicon.png");
   x.setAttribute("width", "100");
   x.setAttribute("height", "100");
-  x.setAttribute("alt", "The Pulpit Rock");
  //document.body.appendChild(x);
 console.log(`item${position2}`)
 let item=`item${position1}`
