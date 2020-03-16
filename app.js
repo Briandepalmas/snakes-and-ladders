@@ -76,16 +76,21 @@ function user1() {
         console.log(gameStart)
     }
     if (gameStart == true) {
+        
+        if (`item${position1}` > 0) {
+            remove1()
+        }
         position1 += rolled
         document.getElementById("text").innerHTML = `PLAYER1 rolled a ${rolled}\nPLAYER1 moves to square #${position1}`
         console.log(`USER1 rolled a ${rolled}`)
         console.log(`USER1 moves to square #${position1}`)
         // console.log(position1)
         // console.log(gameStart)
-         
+
         finishLine()
         ladder()
         displayP1()
+        // remove()
         if (win == true) {
             console.log("USER 1 WINS!")
         } else {
@@ -108,13 +113,20 @@ function user2() {
         console.log(gameStart)
     }
     if (gameStart == true) {
-
+        //  var icon2 = document.getElementById("pic2");
+        console.log(`item${position2}` + "PICCC")
+        if (`item${position2}` > 0) {
+            remove2()
+        }
         console.log(rolled)
         position2 += rolled
+
+        console.log(position2 + "AFTER PICC")
         document.getElementById("text").innerHTML = `PLAYER2 rolled a ${rolled}\nPLAYER2 moves to square #${position2}`
         console.log(`USER2 rolled a ${rolled}`)
         console.log(`USER2 moves to square #${position2}`)
         displayP2()
+
         ladder()
         finishLine()
         if (win == true) {
@@ -132,10 +144,16 @@ function user2() {
 function finishLine() {
 
     if (position1 >= 36) {
-        document.getElementById("dice").onclick = alert("GAME OVER PLAYER 1 WINS!")
+        document.getElementById("text").innerHTML = "PLAYER1 WINS!"
+       document.getElementById("item36").appendChild(x); 
+       document.getElementById("dice").onclick = alert("GAME OVER PLAYER 1 WINS!")
+        
         win = true
     } else if (position2 >= 36) {
-        document.getElementById("dice").onclick = alert("GAME OVER PLAYER 2 WINS!")
+        document.getElementById("text").innerHTML = "PLAYER2 WINS!"
+       document.getElementById("item36").appendChild(y); 
+       document.getElementById("dice").onclick = alert("GAME OVER PLAYER 2 WINS!")
+        
         win = true
     }
 }
@@ -145,57 +163,70 @@ function ladder() {
     if (position1 == 16) {
         position1 = 29
         document.getElementById("text").innerHTML = `PLAYER1 rolled a ${rolled}\nPLAYER1 Landed on the ladder and moves up to #29!`
+        document.getElementById("item29").appendChild(x);
         console.log(position1 + " User 1 went up to 29")
     }
     //32 to 20
     else if (position1 == 32) {
         position1 = 20
         document.getElementById("text").innerHTML = `PLAYER1 rolled a ${rolled}\nPLAYER1 Landed on the sting-ray and moves down to #29!`
+        document.getElementById("item20").appendChild(x);
         console.log(position1 + " User 1 decreased to 20")
     }
     //16 to 29
     if (position2 == 16) {
         position2 = 29
         document.getElementById("text").innerHTML = `PLAYER2 rolled a ${rolled}\nPLAYER2 Landed on the ladder and moves up to #29!`
+        document.getElementById("item29").appendChild(y);
         console.log(position2 + " User 2 went up to 29")
     }
     //32 to 20
     else if (position2 == 32) {
         position2 = 20
         document.getElementById("text").innerHTML = `PLAYER2 rolled a ${rolled}\nPLAYER2 Landed on the sting-ray and moves down to #29!`
+        document.getElementById("item20").appendChild(y);
         console.log(position2 + " User 2 decreased to 20")
     }
 }
 
 //let does not work
-
+var x = document.createElement("IMG", "pic1");
 displayP1 = () => {
     var p1 = `item${position1}`
-   
-    var x = document.createElement("IMG");
-    x.setAttribute("src", "/assets/images/orangeicon.png");
+
+    
+    x.setAttribute("src", "/assets/images/babyshark.png");
     x.setAttribute("width", "100");
     x.setAttribute("height", "100");
-    x.setAttribute("position","absolute")
     console.log(`item${position1}`)
-   
     document.getElementById(p1).appendChild(x);
-    
+
 }
+
+var y = document.createElement("IMG", "pic2");
 displayP2 = () => {
-    
+
     var p2 = `item${position2}`
 
     console.log(`item${position2}`)
-    var y = document.createElement("IMG");
-    y.setAttribute("src", "/assets/images/greenicon.png");
+    
+    y.setAttribute("src", "/assets/images/girlshark.png");
     y.setAttribute("width", "100");
     y.setAttribute("height", "100");
-    y.setAttribute("position","relative")
     document.getElementById(p2).appendChild(y);
+
 }
 
 
+
+function remove2() {  
+    y.remove();
+
+}
+function remove1() {  
+    x.remove();
+
+}
 
 
 
