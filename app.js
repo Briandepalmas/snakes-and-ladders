@@ -1,3 +1,4 @@
+
 let user = [{
     name: "PLAYER1",
     position: "",
@@ -23,7 +24,7 @@ function dice() {
 
 function firstTurn() {
     //WHO GOES FIRST???
-    // document.getElementById("text").innerHTML = "ROLL TO DICE TO DECIDE WHO MOVES FIRST"
+
     if (gameStart == false) {
         user1()
         user2()
@@ -81,7 +82,7 @@ function user1() {
             remove1()
         }
         position1 += rolled
-        document.getElementById("text").innerHTML = `PLAYER1 rolled a ${rolled}\nPLAYER1 moves to square #${position1}`
+        document.getElementById("text").innerHTML = `PLAYER1 rolled a ${rolled}\nPLAYER1 moves to square #${position1}\n PLAYER2's TURN!`
         console.log(`USER1 rolled a ${rolled}`)
         console.log(`USER1 moves to square #${position1}`)
         // console.log(position1)
@@ -122,7 +123,7 @@ function user2() {
         position2 += rolled
 
         console.log(position2 + "AFTER PICC")
-        document.getElementById("text").innerHTML = `PLAYER2 rolled a ${rolled}\nPLAYER2 moves to square #${position2}`
+        document.getElementById("text").innerHTML = `PLAYER2 rolled a ${rolled}\nPLAYER2 moves to square #${position2}\n PLAYER1's TURN!`
         console.log(`USER2 rolled a ${rolled}`)
         console.log(`USER2 moves to square #${position2}`)
         displayP2()

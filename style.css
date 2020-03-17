@@ -3,34 +3,37 @@
     font-weight: bold;
     font-style: oblique;
     text-align: center;
-
-;
-    /* background-color: rgb(88, 203, 88);
-    border-radius: 40%; */
+    border: solid;
+    border-color: orange;
+    text-shadow:  -1px 0 black, 0 10px black, 1px 0 black, 0 -1px black;
+    border-width: 10px;
+    background-color: rgb(88, 203, 88);
+    border-radius: 40%;
     color:white;
     font-family: 'Bubblegum Sans', cursive;
-    position: relative;
+    
     
 }
-#surf{
+/* #surf{
     margin-left: 20%;
     margin-bottom: 30%;
+    height:60vh;
     transform: rotate(90deg);
-  position: absolute;
+position: absolute;
     
     
-}
+} */
 body{
-    background-image: url(/assets/images/bodybackground.jpg);
-    background-repeat: no-repeat;
-    background-size: 100vw 120vw;
+    background-image: url(/assets/images/water.gif);
+    /* background-repeat: no-repeat; */
+    background-size: 50vw 50vw;
 
 }
 
 #wrapper{
     margin-bottom: 60%;
     margin-top: 10%;
-    position: relative;
+   
     
 }
 
@@ -44,17 +47,19 @@ body{
     padding-bottom:80px;
     height: 15vh;
     width:10vw;
-    /* position: relative; */
+   
+    
 }
  .item{
      font-size: 30px;
      color:white;
     background-color: navy;
     border:solid white;
+     border-width: 3px;
 
 }
 
- #sixteen{
+ #item16{
     background-size: 100px;
     color:navy;
     background-color: turquoise;
@@ -78,14 +83,56 @@ body{
     transform: rotate(20deg);
 }
 
- #thirtytwo{
+ #item32{
     background-color: turquoise;
     color:navy
     /* grid-column: 2/3;
     grid-row: 1/4; */
  }
-#last{
+#item36{
     background-color: springgreen;
     color: navy;
     text-align: center;
+}
+#btn{
+    margin-top: 0px;
+    margin-left: 40%;
+    border-radius: 50%;
+    border-color: black;
+    height:100px;
+    width: 130px;
+    border-width: 6px;
+    font-size: 30px;
+    background-color: red;
+    font-family: 'Bubblegum Sans', cursive;
+    color:white;
+   position: static;
+}
+#dice{
+    position: fixed;
+
+    margin-left:82%;
+    border-color: black;
+    border-width: 10px;
+    height:100px;
+    width: 130px;
+    font-size: 20px;
+    background-color:whitesmoke;
+    font-family: 'Bubblegum Sans', cursive;
+    color:black;
+  
+
+}
+#text{
+    height: 300px;
+    width: 260px;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 30px;
+    text-align: center;
+    color: navy;
+    background-color: orange;
+    border:solid black; 
+    border-width: 10px;
+    margin-top: 250px;
+    position: absolute;
 }
